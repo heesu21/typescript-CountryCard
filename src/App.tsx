@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { getCountryList } from "./api/api";
+import CountryList from "./component/CountryList";
 
 function App() {
   const [countryList, setCountryList] = useState([]);
@@ -14,7 +15,11 @@ function App() {
     fetchCoutryList();
   }, []);
 
-  return <></>;
+  return (
+    <>
+      <CountryList props={countryList} />
+    </>
+  );
 }
 
 export default App;
